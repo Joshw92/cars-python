@@ -18,12 +18,12 @@ spec:
   template:
     metadata:
       labels:
-        app: simpleapp
+        app: cars-python
     spec:
       containers:
         - image: jwilliams12/cars-python
           imagePullPolicy: Always
-          name: simpleapp
+          name: cars-python
           ports:
             - containerPort: 5000
 ---
