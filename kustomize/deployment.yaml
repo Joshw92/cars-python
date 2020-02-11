@@ -1,0 +1,28 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: cars-python
+  name: cars-python
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: cars-python
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: simpleapp
+    spec:
+      containers:
+        - image: jwilliams12/cars-python
+          imagePullPolicy: Always
+          name: simpleapp
+          ports:
+            - containerPort: 5000

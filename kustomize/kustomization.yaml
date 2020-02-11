@@ -1,0 +1,5 @@
+imageTags:
+  - name: jwilliams12/cars-python
+    newTag: 0.0.1
+resources:
+- deployment.yaml
